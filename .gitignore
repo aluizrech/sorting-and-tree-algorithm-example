@@ -145,3 +145,9 @@ local.properties
  # ESLint
  ######################
  .eslintcache
+
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/sorting-and-tree-algorithm-example.iml
+/.idea/vcs.xml
