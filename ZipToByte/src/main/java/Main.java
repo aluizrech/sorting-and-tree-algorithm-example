@@ -9,7 +9,9 @@ import java.util.zip.ZipInputStream;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\Zip\\Examplo.zip");
+        String origem = "C:\\Zip\\Examplo.zip";
+        String destino = "C:\\Zip\\";
+        File file = new File(origem);
         ByteArrayInputStream bis = new ByteArrayInputStream(FileUtils.readFileToByteArray(file));
         ZipInputStream zipStream = new ZipInputStream(bis);
         ZipEntry ze;
@@ -17,7 +19,7 @@ public class Main {
         int readBytes;
 
         while((ze = zipStream.getNextEntry()) != null) {
-            String fileName = "C:\\Zip\\"+ze.getName();
+            String fileName = destino + ze.getName();
             if(ze.isDirectory()) {
                 Files.createDirectories(Paths.get(fileName));
                 continue;
